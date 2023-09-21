@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: #08090a;
+}
+
+h1 {
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 2vh;
+}
+
+h3,
+h4,
+p {
+    color: white;
+}
+
+section {
+    width: 60vw;
+    height: 57vh;
+    background-color: #252426;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem;
+    border-radius: 15px;
+}
+
+.expenseTracker {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.expenseTracker div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2vh;
+    ;
+}
+
+form {
+    width: 100%;
+}
+
+input {
+    width: 21vw;
+    height: 5vh;
+    padding-left: 1vw;
+    margin-bottom: 1vh;
+    border-radius: 6px;
+    border: solid 0px black;
+    outline: none;
+    background: #525159;
+    color: white;
+}
+
+form button {
+    background-color: #3f32b7;
+    border: solid 0px black;
+    height: 5vh;
+    width: 22vw;
+    border-radius: 6px;
+    color: white;
+}
+
+
+
+
+.expenseChart {
+
+    width: 31vw;
+    height: 34vh;
+}
+
+
+
+.history {
+    width: 57%;
+}
+
+.list {
+    overflow-y: scroll;
+    height: 22vh;
+}
+
+.list::-webkit-scrollbar {
+    width: 10px;
+
+}
+
+.list::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 5px;
+}
+
+.list div {
+    display: flex;
+    justify-content: space-between;
+    background: #525159;
+    height: 3vh;
+    margin-bottom: 1vh;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.list button {
+    background-color: #3f32b7;
+    border: solid 0px black;
+    color: white;
+    width: 3vw;
+    height: 3vh;
+    border-radius: 5px;
+    cursor: pointer;
+}
