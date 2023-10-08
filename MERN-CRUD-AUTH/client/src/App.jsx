@@ -6,10 +6,12 @@ import TaskFormPage from "./page/TaskFormPage";
 import HomePage from "./page/HomePage";
 import ProfilePage from "./page/ProfilePage";
 import ProtectedRoute from "./ProtectedRoute";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <BrowserRouter>
+      <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />

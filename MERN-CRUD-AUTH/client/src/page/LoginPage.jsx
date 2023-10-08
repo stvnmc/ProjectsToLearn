@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useAuth } from "../context/AuthContext";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const LoginPage = () => {
   const {
@@ -8,11 +9,17 @@ const LoginPage = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const { signin, errors: LoginErrors } = useAuth();
+  const { signin, errors: LoginErrors, isAuthenticated } = useAuth();
+  const navigate = useNavigate();
 
   const onSubmit = handleSubmit(async (date) => {
     signin(date);
   });
+
+  useEffect(() => {
+    if (isAuthenticated) navigate("/tasks");
+  }, [isAuthenticated]);
+
   return (
     <div>
       {LoginErrors.map((error, i) => (

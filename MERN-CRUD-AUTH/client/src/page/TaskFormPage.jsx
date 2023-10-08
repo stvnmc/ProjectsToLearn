@@ -1,10 +1,15 @@
 import { useForm } from "react-hook-form";
+import { useTasks } from "../context/TasksContext";
+import { useNavigate } from "react-router-dom";
 
 const TaskFormPage = () => {
   const { register, handleSubmit } = useForm();
+  const { createTask } = useTasks();
+  const navigate = useNavigate();
 
   const onSubmit = handleSubmit((data) => {
-    console.log(data);
+    createTask(data);
+    navigate("/tasks");
   });
 
   return (
@@ -16,7 +21,11 @@ const TaskFormPage = () => {
           {...register("title")}
           autoFocus
         />
-        <textarea rows="3" placeholder="Description" ></textarea>
+        <textarea
+          rows="3"
+          placeholder="Description"
+          {...register("description")}
+        ></textarea>
         <button>Save</button>
       </form>
     </div>
