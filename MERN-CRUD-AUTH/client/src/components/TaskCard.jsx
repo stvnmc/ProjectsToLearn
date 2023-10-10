@@ -1,25 +1,26 @@
-import { useEffect } from "react";
 import { useTasks } from "../context/TasksContext";
 import { Link } from "react-router-dom";
 
-const TaskCard = ({ task }) => {
-  const { title, description, date, _id } = task;
+import days from "dayjs";
+import utc from "dayjs/plugin/utc";
+days.extend(utc);
 
+const TaskCard = ({ task }) => {
   const { deleteTask } = useTasks();
 
   return (
     <div>
       <header>
-        <h1>{title}</h1>
+        <h1>{task.title}</h1>
         <div>
-          <button onClick={() => deleteTask(_id)}>delete</button>
+          <button onClick={() => deleteTask(task._id)}>delete</button>
           <button>
-            <Link to={`/tasks/${_id}`}>edit</Link>
+            <Link to={`/tasks/${task._id}`}>edit</Link>
           </button>
         </div>
       </header>
-      <p>{description}</p>
-      <p>{new Date(date).toLocaleDateString()}</p>
+      <p>{task.description}</p>
+      <p>{days(task.date).utc().format("DD/MM/YYYY")}</p>
     </div>
   );
 };

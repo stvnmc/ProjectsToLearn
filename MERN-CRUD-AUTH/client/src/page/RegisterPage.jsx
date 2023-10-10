@@ -22,10 +22,13 @@ const RegisterPage = () => {
 
   return (
     <div>
-      {RegisterErrors.map((error, i) => (
-        <div key={i}>{error}</div>
-      ))}
+      <div>
+        {RegisterErrors.map((error, i) => (
+          <div key={i}>{error}</div>
+        ))}
+      </div>
       <form onSubmit={onSubmit}>
+        <h1>Register</h1>
         <input
           type="text"
           {...register("username", { required: true })}
